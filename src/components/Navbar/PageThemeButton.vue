@@ -6,11 +6,11 @@
   >
     <Sun
       v-if="isDark"
-      class="h-[17px] w-[17px] text-slate-700 transition-colors group-hover:text-slate-900 dark:text-slate-200 dark:group-hover:text-slate-100"
+      class="h-[20px] w-[20px] text-slate-700 transition-colors group-hover:text-slate-900 dark:text-slate-200 dark:group-hover:text-slate-100"
     />
     <Moon
       v-else
-      class="h-[17px] w-[17px] text-slate-700 transition-colors group-hover:text-slate-900 dark:text-slate-200 dark:group-hover:text-slate-100"
+      class="h-[20px] w-[20px] text-slate-700 transition-colors group-hover:text-slate-900 dark:text-slate-200 dark:group-hover:text-slate-100"
     />
   </button>
 </template>
