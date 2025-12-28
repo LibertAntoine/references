@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": false,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "printWidth": 80,
+  "trailingComma": "none",
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "proseWrap": "always",
+  "embeddedLanguageFormatting": "auto",
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "<TYPES>^(node:)",
+    "<TYPES>",
+    "<TYPES>^[.]",
+    "",
+    "<BUILTIN_MODULES>",
+    "^vue$",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@/services",
+    "^@/stores",
+    "^@/composables",
+    "",
+    "^@@materials",
+    "^@/components",
+    "^[.]"
+  ],
+  "importOrderTypeScriptVersion": "5.0.0",
+  "importOrderCaseSensitive": false
+}
