@@ -1,7 +1,7 @@
 <template>
   <div class="hover:opacity-100 transition-opacity">
     <Select v-model="locale">
-      <SelectTrigger class="w-[80px] px-2 gap-0 font-semibold" size="sm">
+      <SelectTrigger class="w-20 px-2 gap-0 font-semibold" size="sm">
         <span
           :class="[
             'fi rounded-[3px] flag-icon',
