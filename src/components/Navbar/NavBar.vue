@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-slate-50 h-11 w-full flex items-center px-4 shadow-md fixed top-0"
+    class="bg-slate-50 h-11 w-full flex items-center px-4 shadow-md fixed top-0 z-10"
   >
     <div class="flex items-center text-slate-700">
       <BookMarked class="w-6 h-6 mr-1.5" />

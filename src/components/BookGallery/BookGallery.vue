@@ -1,25 +1,8 @@
 <template>
-  <div class="flex flex-row m-auto max-w-5xl px-7 mt-18 gap-10">
-    <div class="flex-1 flex flex-col gap-6">
-      <div
-        v-for="category in booksByCategory"
-        :key="category.code"
-        :id="`category-${category.code}`"
-        class="mb-8 scroll-mt-28"
-        :ref="el => setCategoryRef(category.code, el)"
-        :data-category-code="category.code"
-      >
-        <h2 class="text-2xl font-semibold mb-4">{{ category.name }}</h2>
-        <div class="flex flex-col gap-4">
-          <BookSection
-            v-for="book in category.books"
-            :key="book.title"
-            :book="book"
-          />
-        </div>
-      </div>
-    </div>
-    <aside class="hidden md:block w-58 sticky top-20 self-start">
+  <div class="relative flex flex-row-reverse justify-center px-7 pt-24 w-full">
+    <aside
+      class="w-58 z-10 max-w-xs hidden sm:block ml-5 sticky top-24 h-fit border-l pl-1"
+    >
       <nav>
         <ul class="flex flex-col gap-0.5">
           <li v-for="category in booksByCategory" :key="category.code">
@@ -39,6 +22,25 @@
         </ul>
       </nav>
     </aside>
+    <div class="flex flex-col gap-6 max-w-3xl w-full mx-auto">
+      <div
+        v-for="category in booksByCategory"
+        :key="category.code"
+        :id="`category-${category.code}`"
+        class="mb-8 scroll-mt-28"
+        :ref="el => setCategoryRef(category.code, el)"
+        :data-category-code="category.code"
+      >
+        <h2 class="text-2xl font-semibold mb-4">{{ category.name }}</h2>
+        <div class="flex flex-col gap-4">
+          <BookSection
+            v-for="book in category.books"
+            :key="book.title"
+            :book="book"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
