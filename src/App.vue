@@ -1,6 +1,8 @@
 <template>
-  <NavBar />
-  <BookGallery />
+  <div class="h-screen">
+    <NavBar />
+    <BookGallery />
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -11,7 +11,7 @@ import fr from './locales/fr.ts'
 type MessageSchema = typeof en
 
 const i18n = createI18n<[MessageSchema], 'en' | 'fr'>({
-  locale: 'en',
+  locale: 'fr',
   fallbackLocale: 'fr',
   globalInjection: true,
   messages: {

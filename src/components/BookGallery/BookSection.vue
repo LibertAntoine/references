@@ -1,7 +1,7 @@
 <template>
   <section class="font-nunito">
     <div class="mb-3 flex gap-2">
-      <div class="h-19.5 w-16 shrink-0">
+      <div class="h-34 w-25 shrink-0">
         <img
           v-if="book.coverImage"
           class="h-full w-full object-cover rounded-sm shadow-md"
@@ -38,8 +38,14 @@
         </div>
       </div>
     </div>
-    <p class="mb-3 text-justify">{{ book.summary }}</p>
-    <ul class="ml-4 mt-1.5">
+    <p
+      class="mb-2 text-justify"
+      v-for="paragraph in book.summary"
+      :key="paragraph"
+    >
+      {{ paragraph }}
+    </p>
+    <ul class="ml-4 mt-3">
       <li v-for="question in book.questions" :key="question">
         <ChevronsRight class="inline-block mb-0.5 mr-1 h-4 w-4" />
         {{ question }}

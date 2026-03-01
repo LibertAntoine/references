@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col m-auto max-w-3xl px-7 mt-6 gap-6">
+  <div class="flex flex-col m-auto max-w-3xl px-7 mt-18 gap-6">
     <div v-for="category in booksByCategory" :key="category.code" class="mb-8">
       <h2 class="text-2xl font-semibold mb-4">{{ category.name }}</h2>
       <div class="flex flex-col gap-4">

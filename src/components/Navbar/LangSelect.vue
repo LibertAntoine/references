@@ -10,7 +10,7 @@
         />
         {{ languages.find(lang => lang.flag === locale)?.code.toUpperCase() }}
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent align="end">
         <SelectGroup>
           <SelectItem
             v-for="lang in languages"
