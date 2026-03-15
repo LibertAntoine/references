@@ -1,5 +1,5 @@
 export default {
-  title: 'Livre références',
+  title: 'Livres références',
   categories: [
     {
       name: 'Algorithmie & programmation',
