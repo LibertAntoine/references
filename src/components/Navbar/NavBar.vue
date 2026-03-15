@@ -1,8 +1,8 @@
 <template>
   <div
-    class="bg-slate-50 h-11 w-full flex items-center px-4 shadow-md fixed top-0 z-10"
+    class="bg-surface h-11 w-full flex items-center px-4 shadow-md fixed top-0 z-10 border-b border-border"
   >
-    <div class="flex items-center text-slate-700">
+    <div class="flex items-center text-surface-foreground">
       <BookMarked class="w-6 h-6 mr-1.5" />
       <h1 class="text-lg font-semibold">{{ $t('title') }}</h1>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex flex-row-reverse justify-center px-7 pt-24 w-full">
     <aside
-      class="w-58 z-10 max-w-xs hidden sm:block ml-5 sticky top-24 h-fit border-l pl-1"
+      class="w-58 z-10 max-w-xs hidden sm:block ml-5 sticky top-24 h-fit border-l border-border pl-1"
     >
       <nav>
         <ul class="flex flex-col gap-0.5">
@@ -11,8 +11,8 @@
               :class="[
                 'block px-3 py-2 rounded transition-colors text-sm',
                 activeCategory === category.code
-                  ? ' font-semibold text-slate-800'
-                  : 'hover:bg-slate-100 text-slate-600'
+                  ? 'font-semibold text-foreground'
+                  : 'hover:bg-accent text-muted-foreground'
               ]"
               @click.prevent="scrollToCategory(category.code)"
             >

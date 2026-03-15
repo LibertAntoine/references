@@ -10,9 +10,9 @@
         />
         <div
           v-else
-          class="h-full w-full bg-slate-200 rounded-sm shadow-sm flex items-center justify-center"
+          class="h-full w-full bg-muted rounded-sm shadow-sm flex items-center justify-center"
         >
-          <BookIcon class="text-slate-300 size-8" />
+          <BookIcon class="text-muted-foreground/40 size-8" />
         </div>
       </div>
       <div>
@@ -53,7 +53,7 @@
     </ul>
   </section>
   <div
-    class="w-full h-px bg-linear-to-r from-slate-100 via-slate-300 to-slate-100"
+    class="w-full h-px bg-linear-to-r from-transparent via-border to-transparent"
   />
 </template>
 
