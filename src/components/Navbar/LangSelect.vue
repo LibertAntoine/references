@@ -1,7 +1,10 @@
 <template>
   <div class="hover:opacity-100 transition-opacity">
     <Select v-model="locale">
-      <SelectTrigger class="w-20 px-2 gap-0 font-semibold" size="sm">
+      <SelectTrigger
+        class="w-20 px-2 gap-0 font-semibold cursor-pointer"
+        size="sm"
+      >
         <span
           :class="[
             'fi rounded-[3px] flag-icon',
@@ -16,7 +19,7 @@
             v-for="lang in languages"
             :key="lang.code"
             :value="lang.flag"
-            class="flex items-center"
+            class="flex items-center cursor-pointer"
           >
             <span :class="['fi rounded-[3px] flag-icon', lang.iconClass]" />
             <p class="font-semibold">{{ lang.code.toUpperCase() }}</p>

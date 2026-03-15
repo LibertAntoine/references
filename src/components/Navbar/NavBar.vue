@@ -7,7 +7,7 @@
       <h1 class="text-lg font-semibold">{{ $t('title') }}</h1>
     </div>
     <div class="ml-auto flex items-center gap-3">
-      <PageThemeButton />
+      <PageThemeButton class="cursor-pointer" />
       <LangSelect />
     </div>
   </div>
