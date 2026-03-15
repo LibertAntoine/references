@@ -1,0 +1,16 @@
+services:
+  books:
+    image: ${IMAGE_NAME}
+    restart: unless-stopped
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.books.rule: "Host(`books.antoine-libert.com`)"
+      traefik.http.routers.books.entrypoints: "web, websecure"
+      traefik.http.routers.books.tls: "true"
+      traefik.http.routers.books.tls.certresolver: "letsencrypt"
+    networks:
+      - traefik_network
+
+networks:
+  traefik_network:
+    external: true
