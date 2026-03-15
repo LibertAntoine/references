@@ -47,6 +47,8 @@
 <script setup lang="ts">
 import type { Book } from '@/@types/books'
 
+import type { ComponentPublicInstance } from 'vue'
+
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -67,8 +69,8 @@ const activeCategory = ref<string>('')
 const categoryRefs = ref<Record<string, HTMLElement | null>>({})
 let observer: IntersectionObserver | null = null
 
-function setCategoryRef(code: string, el: HTMLElement | null) {
-  categoryRefs.value[code] = el
+function setCategoryRef(code: string, el: Element | ComponentPublicInstance | null) {
+  categoryRefs.value[code] = el instanceof HTMLElement ? el : null
 }
 
 function scrollToCategory(code: string) {
@@ -97,12 +99,13 @@ function setupObserver() {
     }
     if (current) activeCategory.value = current
   }, options)
+  const obs = observer
   setTimeout(() => {
     for (const category of booksByCategory.value) {
       const el = categoryRefs.value[category.code]
       if (el) {
         el.setAttribute('data-category-code', category.code)
-        observer.observe(el)
+        obs.observe(el)
       }
     }
   }, 0)
