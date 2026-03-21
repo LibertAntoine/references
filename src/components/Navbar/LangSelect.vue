@@ -1,6 +1,6 @@
 <template>
   <div class="hover:opacity-100 transition-opacity">
-    <Select v-model="locale">
+    <Select :model-value="locale" @update:model-value="val => setLang(val as 'fr' | 'en')">
       <SelectTrigger
         class="w-20 px-2 gap-0 font-semibold cursor-pointer"
         size="sm"
@@ -19,7 +19,7 @@
             v-for="lang in languages"
             :key="lang.code"
             :value="lang.flag"
-            class="flex items-center cursor-pointer"
+            class="flex items-center gap-2 cursor-pointer"
           >
             <span :class="['fi rounded-[3px] flag-icon', lang.iconClass]" />
             <p class="font-semibold">{{ lang.code.toUpperCase() }}</p>
@@ -31,8 +31,6 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-
 import {
   Select,
   SelectContent,
@@ -40,22 +38,12 @@ import {
   SelectItem,
   SelectTrigger
 } from '@/components/@materials/ui/select'
+import { useLang } from '@/composables/useLang'
 
 const languages = [
   { code: 'en', iconClass: 'fi-gb', flag: 'en' },
   { code: 'fr', iconClass: 'fi-fr', flag: 'fr' }
 ]
 
-const { locale } = useI18n()
+const { locale, setLang } = useLang()
 </script>
-
-<style>
-/* .flag-icon {
-  filter: saturate(0.6);
-  transition: filter 0.2s ease;
-}
-
-.flag-icon:hover {
-  filter: saturate(1);
-} */
-</style>

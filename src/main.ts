@@ -10,8 +10,18 @@ import fr from './locales/fr.ts'
 
 type MessageSchema = typeof en
 
+const SUPPORTED_LOCALES = ['fr', 'en'] as const
+type Locale = (typeof SUPPORTED_LOCALES)[number]
+
+function getInitialLocale(): Locale {
+  const params = new URLSearchParams(window.location.search)
+  const lang = params.get('lang')
+  if (lang === 'en' || lang === 'fr') return lang
+  return 'fr'
+}
+
 const i18n = createI18n<[MessageSchema], 'en' | 'fr'>({
-  locale: 'fr',
+  locale: getInitialLocale(),
   fallbackLocale: 'fr',
   globalInjection: true,
   messages: {
